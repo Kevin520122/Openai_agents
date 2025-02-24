@@ -69,11 +69,19 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r requirements.txt 
+#Include lama-index==0.11.6 llama-index-llms-openai llama-index-readers-file llama-index-embeddings-openai llama-index-llms-openai-like "openinference-instrumentation-llama-index>=2" arize-phoenix python-dotenv pydantic==2.6.1
+sqlalchemy==2.0.27
+prometheus-fastapi-instrumentator==6.1.0
+redis==5.0.1
+python-jose==3.3.0
+fastapi==0.109.2
+uvicorn==0.27.1
 
 # Set up environment variables
 cp .env.example .env
 # Add your OpenAI API key to .env
+#Need some credits to use OpenAI API
 
 # Start server
 uvicorn main:app --reload
@@ -102,11 +110,6 @@ amazon-10k-analyzer/
 ```
 
 ## Environment Variables
-
-### Frontend (.env)
-```env
-NEXT_PUBLIC_API_URL=http://localhost:8000
-```
 
 ### Backend (.env)
 ```env
@@ -165,9 +168,9 @@ Access the monitoring dashboard at `http://localhost:6006`
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch 
+3. Commit your changes 
+4. Push to the branch 
 5. Open a Pull Request
 
 ## License
